@@ -1,6 +1,6 @@
 # Feedback Sentiment Classifier Agent
 
-An AI agent that classifies customer feedback text as positive, negative, or neutral sentiment, returning a confidence score and reasoning explanation.
+An AI agent that classifies customer feedback text as positive, negative, or neutral sentiment with ≥ 90% accuracy, returning a confidence score and reasoning explanation. Built on a lightweight LLM (GPT-4o-mini) to achieve sub-second response times.
 
 ## Overview
 

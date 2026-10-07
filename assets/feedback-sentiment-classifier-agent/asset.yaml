@@ -10,9 +10,9 @@ agentCard:
   name: Feedback Sentiment Classifier
   version: 1.0.0
   description: >
-    Classifies customer feedback text as positive, negative, or neutral.
+    Classifies customer feedback text as positive, negative, or neutral with ≥ 90% accuracy.
     Returns a confidence score (0-1) and a natural-language reasoning explanation
-    for each classification. Responds in under 1 second.
+    for each classification. Responds in under 1 second using a lightweight LLM model (GPT-4o-mini).
   capabilities:
     skills:
       - name: classify-sentiment

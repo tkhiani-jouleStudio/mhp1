@@ -39,7 +39,7 @@ No runtime skills are required. The classification logic is simple enough to be 
   - `reasoning` (string: non-empty, ≤ 3 sentences)
   - `low_confidence` (boolean: `true` if confidence < 0.5, otherwise `false`)
 - [x] Ensure the agent accepts a single `feedback_text` string as input via the A2A protocol request.
-- [x] Wire the LLM call through LiteLLM (SAP Generative AI Hub) — use a low-latency model (e.g., `gpt-4o-mini`) to satisfy the < 1 second SLA.
+- [x] Wire the LLM call through LiteLLM (SAP Generative AI Hub) — use `sap/openai--gpt-4o-mini` as the default model to satisfy the < 1 second SLA.
 - [x] Validate that the LLM response is parsed into the structured output schema before returning; handle malformed LLM responses gracefully with a structured error response.
 
 ### Agent Extensibility

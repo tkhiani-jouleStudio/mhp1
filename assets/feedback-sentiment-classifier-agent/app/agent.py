@@ -77,7 +77,7 @@ IMPORTANT: Never log, store, or reveal the raw feedback text content in your rea
     description="The language model powering this agent",
 )
 def get_model_name() -> str:
-    return "sap/anthropic--claude-4.5-sonnet"
+    return "sap/openai--gpt-4o-mini"
 
 
 @agent_model(
