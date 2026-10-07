@@ -1,0 +1,48 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: agent
+
+metadata:
+  name: feedback-sentiment-classifier-agent
+  version: 1.0.0
+
+agentCard:
+  name: Feedback Sentiment Classifier
+  version: 1.0.0
+  description: >
+    Classifies customer feedback text as positive, negative, or neutral.
+    Returns a confidence score (0-1) and a natural-language reasoning explanation
+    for each classification. Responds in under 1 second.
+  capabilities:
+    skills:
+      - name: classify-sentiment
+        description: Classify feedback text into positive, negative, or neutral with confidence score and reasoning.
+
+provides:
+  apis:
+    - name: feedback-sentiment-classifier-agent
+      kind: a2a
+      ordId: customer.build:apiResource:feedback-sentiment-classifier-deec9.feedback-sentiment-classifier-agent:v1
+
+container:
+  buildPath: .
+  port: 5000
+
+probes:
+  startup:
+    path: /.well-known/agent.json
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 18
+  liveness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readiness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3

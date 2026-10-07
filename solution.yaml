@@ -1,0 +1,10 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: feedback-sentiment-classifier-deec9
+  version: 1.0.0
+  description: AI agent that classifies customer feedback into positive, negative, or neutral sentiments with confidence scores and reasoning.
+
+assets:
+  - ref: ./assets/feedback-sentiment-classifier-agent/asset.yaml
